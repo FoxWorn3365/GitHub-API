@@ -1,5 +1,5 @@
 {
-    "name": "FoxWorn3365/GitHub-API",
+    "name": "foxworn3365/github-api",
     "description": "A lightweight, fast, dependency-free library that allows you to use the GitHub API",
     "require": {
         "php": ">=7.4"
