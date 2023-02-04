@@ -9,6 +9,8 @@ namespace GitHub\Parts\Repository {
       foreach ($issue as $key => $val) {
         $this->{$key} = $val;
       }
+      $this->user = (new \GitHub\Parts\User($this->user));
+      $this->assignee = (new \GitHub\Parts\User($this->assignee));
     }
 
     public function update(array $data) : Issue {

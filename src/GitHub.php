@@ -30,6 +30,7 @@ namespace GitHub {
       $this->cache = (new Cache()); 
       $this->search = (new Parts\Search());
       $this->query = (new Parts\Search());
+      $this->http = (new \GitHub\Http());
       $this->cache::set('token', $token);
       return $this;
     }

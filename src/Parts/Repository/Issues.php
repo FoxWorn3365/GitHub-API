@@ -26,5 +26,9 @@ namespace GitHub\Parts\Repository {
     public function get(int $number) : Issue {
       return (new Issue(\GitHub\Http::post("{$this->endpoint}/repos/{$this->repository->owner->login}/{$this->repository->name}/issues/{$number}", $this->token)));
     }
+
+    public function load(object $object) : Issue {
+      return (new Issue($this->repository, $object));
+    }
   }
 }

@@ -16,3 +16,5 @@ require 'src/Parts/Repository/Branch.php';
 require 'src/Parts/Repository/Branches.php';
 require 'src/Parts/Repository/Webhook.php';
 require 'src/Parts/Repository/Webhooks.php';
+require 'src/Parts/Promises/Issue.php';
+require 'src/Parts/Promises/Http.php';
