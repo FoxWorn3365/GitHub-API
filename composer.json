@@ -14,5 +14,8 @@
     },
     "require": {
         "php": "^8.0"
+    },
+    "autoload": {
+        "files":["src/autoload.php"]
     }
 }
