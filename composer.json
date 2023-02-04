@@ -13,6 +13,6 @@
         "wiki": "https://github.com/FoxWorn3365/GitHub-API/wiki"
     },
     "require": {
-        "php": "^8.0",
+        "php": "^8.0"
     }
 }
