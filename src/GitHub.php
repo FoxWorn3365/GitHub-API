@@ -25,6 +25,7 @@ namespace GitHub {
       $this->cache = (new \GitHub\Cache()); 
       $this->search = (new \GitHub\Parts\Search());
       $this->query = (new \GitHub\Parts\Search());
+      $this->utils = (new \GitHub\Utils());
       $this->cache::set('token', $token);
       return $this;
     }
