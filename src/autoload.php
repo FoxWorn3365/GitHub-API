@@ -3,6 +3,7 @@ require __DIR__ . '/GitHub.php';
 require __DIR__ . '/Cache.php';
 require __DIR__ . '/Http.php';
 require __DIR__ . '/Query.php';
+require __DIR__ . '/Utils.php';
 require __DIR__ . '/Parts/Search.php';
 require __DIR__ . '/Parts/Repositories.php';
 require __DIR__ . '/Parts/Repository.php';
