@@ -1,9 +1,4 @@
 <?php
-use GitHub\Cache;
-use GitHub\Http;
-use GitHub\Parts\Users;
-use GitHub\Parts\Repositories;
-
 namespace GitHub {
   class GitHub { 
     public string $token;

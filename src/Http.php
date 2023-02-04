@@ -1,7 +1,4 @@
 <?php
-use GitHub\GitHub;
-use GitHub\Cache;
-
 namespace GitHub {
   class Http extends \GitHub\GitHub {
     public static function request(string $protocol, string $url, string $token, mixed $body = NULL) {

@@ -1,6 +1,4 @@
 <?php
-use GitHub\GitHub;
-use GitHub\Parts\Issues;
 
 namespace GitHub\Parts {
   class Repository extends \GitHub\GitHub {

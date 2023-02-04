@@ -1,9 +1,10 @@
 <?php
-use \GitHub\GitHub as GitHub;
-use \GitHub\Http;
-use \GitHub\Parts\Repository;
-
 namespace GitHub\Parts {
+
+  use GitHub\GitHub as GitHub;
+  use GitHub\Http;
+  use GitHub\Parts\Repository;
+
   class Repositories extends \GitHub\GitHub {
     public function list() : array {
       $data = [];

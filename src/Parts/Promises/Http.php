@@ -1,10 +1,10 @@
 <?php
-use GitHub\GitHub;
-use GitHub\Http;
-
 namespace GitHub\Promises;
 
-class Http extends \GitHub\GitHub {
+use GitHub\Http;
+use GitHub\Cache;
+
+class HttpPromise {
   public string $url;
   public mixed $data;
   public string $method;
@@ -13,6 +13,7 @@ class Http extends \GitHub\GitHub {
     $this->url = $url;
     $this->data = $data;
     $this->method = $method;
+    $this->token = Cache::get('token');
   }
 
   function resolve() : mixed {

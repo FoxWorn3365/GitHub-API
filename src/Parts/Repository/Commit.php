@@ -1,5 +1,4 @@
 <?php
-use GitHub\GitHub;
 
 namespace GitHub\Parts\Repository {
   class Commit extends \GitHub\GitHub {

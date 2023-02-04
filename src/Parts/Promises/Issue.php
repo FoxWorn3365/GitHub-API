@@ -1,9 +1,9 @@
 <?php
+namespace GitHub\Promises;
+
 use GitHub\GitHub;
 use GitHub\Http;
 use GitHub\Parts\Repository;
-
-namespace GitHub\Promises;
 
 class Issue extends \GitHub\GitHub {
   function __construct(object $issue) {

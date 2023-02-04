@@ -1,7 +1,4 @@
 <?php
-use GitHub\GitHub;
-use GitHub\Parts\User;
-use GitHub\Http;
 
 namespace GitHub\Parts {
   class Users extends \GitHub\GitHub {
