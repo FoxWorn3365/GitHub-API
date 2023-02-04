@@ -3,7 +3,7 @@ namespace GitHub {
   class GitHub { 
     public string $token;
     public static string $version = 'ALPHA 0.1 BUGS';
-    public static \GitHub\Cache $cache;
+    public \GitHub\Cache $cache;
     protected string $endpoint = 'https://api.github.com';
 
     function __construct() {
