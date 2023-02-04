@@ -20,12 +20,11 @@ namespace GitHub {
 
     public function new(string $token) : GitHub {
       $this->token = $token;
-      $this->repositories = (new Parts\Repositories());
-      $this->users = (new Parts\Users());
-      $this->cache = (new Cache()); 
-      $this->search = (new Parts\Search());
-      $this->query = (new Parts\Search());
-      $this->http = (new \GitHub\Http());
+      $this->repositories = (new \GitHub\Parts\Repositories());
+      $this->users = (new \GitHub\Parts\Users());
+      $this->cache = (new \GitHub\Cache()); 
+      $this->search = (new \GitHub\Parts\Search());
+      $this->query = (new \GitHub\Parts\Search());
       $this->cache::set('token', $token);
       return $this;
     }
