@@ -1,7 +1,18 @@
 {
     "name": "foxworn3365/github-api",
-    "description": "A lightweight, fast, dependency-free library that allows you to use the GitHub API",
+    "description": "A lightweight, fast, dependency-free library that allows you to use the GitHub API.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "FoxWorn3365",
+            "email": "foxworn3365@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/FoxWorn3365/GitHub-API/issues",
+        "wiki": "https://github.com/FoxWorn3365/GitHub-API/wiki"
+    },
     "require": {
-        "php": ">=7.4"
+        "php": "^8.0",
     }
 }
