@@ -37,4 +37,14 @@ class Collection {
         }
         return $data;
     }
+
+    public function foreach(callable $callback) : void {
+        foreach ($this->collector as $key => $value) {
+            $callback($key, $value);
+        }
+    }
+
+    public function all() : array {
+        return $this->collector;
+    }
 }

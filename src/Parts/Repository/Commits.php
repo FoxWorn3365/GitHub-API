@@ -1,22 +1,30 @@
 <?php
 
-namespace GitHub\Parts\Repository {
-  class Commits extends \GitHub\GitHub {
-    function __construct(\GitHub\Parts\Repository $repo) {
-      $this->repository = $repo;
-    }
+namespace GitHub\Parts\Repository;
 
-    public function list() : array {
-      $data = [];
-      $get = json_decode(\GitHub\Http::get("{$this->endpoint}/repos/{$this->repository->owner->login}/{$this->repository->name}/commits", $this->token));
-      foreach ($get as $repo) {
-        array_push($data, new \GitHub\Parts\Repository\Commit($repo));
-      }
-      return $data;
-    }
+use GitHub\Client;
+use GitHub\Http;
+use GitHub\Parts\Repository;
+use GitHub\Parts\Repository\Commit;
+use GitHub\Collection;
 
-    public function get(string $id) : Commit {
-      return (new Commit(\GitHub\Http::get("{$this->endpoint}/repos/{$this->repository->owner->login}/{$this->repository->name}/commits/{$id}", $this->token)));
+class Commits extends Client {
+  public Repository $repository;
+
+  function __construct(Repository $repo) {
+    $this->repository = $repo;
+  }
+
+  public function list() : Collection {
+    $data = [];
+    $get = json_decode(Http::get("{$this->endpoint}/repos/{$this->repository->owner->login}/{$this->repository->name}/commits", $this->token));
+    foreach ($get as $repo) {
+      array_push($data, new Commit($this->repository, $repo));
     }
+    return (new Collection($data));
+  }
+
+  public function get(string $id) : Commit {
+    return (new Commit($this->repository, Http::get("{$this->endpoint}/repos/{$this->repository->owner->login}/{$this->repository->name}/commits/{$id}", $this->token)));
   }
 }

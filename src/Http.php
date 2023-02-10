@@ -1,6 +1,6 @@
 <?php
 namespace GitHub {
-  class Http extends \GitHub\GitHub {
+  class Http extends Client {
     public static function request(string $protocol, string $url, string $token, mixed $body = NULL) {
       $body = $body ?? [];
       $options = stream_context_create(array( 

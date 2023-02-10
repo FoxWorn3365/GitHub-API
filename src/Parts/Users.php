@@ -1,19 +1,22 @@
 <?php
 
-namespace GitHub\Parts {
-  
-  class Users extends \GitHub\GitHub {
-    public function list(int $max = 10) : array {
-      $data = [];
-      $get = json_decode(\GitHub\Http::get("{$this->endpoint}/users?since={$max}", $this->token));
-      foreach ($get as $user) {
-        array_push($data, new User($user));
-      }
-      return $data;
-    }
+namespace GitHub\Parts;
 
-    public function get(string $user) {
-      return new User(json_decode(\GitHub\Http::get("{$this->endpoint}/users/{$user}", $this->token)));
+use GitHub\Client;
+use GitHub\Collection;
+
+class Users extends Client {
+
+  public function list(int $max = 10) : Collection {
+    $data = [];
+    $get = json_decode(\GitHub\Http::get("{$this->endpoint}/users?since={$max}", $this->token));
+    foreach ($get as $user) {
+      $data[$user->login] = new User($user);
     }
+    return (new Collection($data));
+  }
+
+  public function get(string $user) {
+    return new User(json_decode(\GitHub\Http::get("{$this->endpoint}/users/{$user}", $this->token)));
   }
 }

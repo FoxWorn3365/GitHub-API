@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/Client.php';
 require __DIR__ . '/GitHub.php';
 require __DIR__ . '/Cache.php';
 require __DIR__ . '/Http.php';
